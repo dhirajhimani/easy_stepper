@@ -98,12 +98,14 @@ class BaseStep extends StatelessWidget {
                   borderRadius: stepShape != StepShape.circle
                       ? BorderRadius.circular(stepRadius ?? 0)
                       : null,
-                  color: isFinished
-                      ? finishedBackgroundColor ??
-                          Theme.of(context).colorScheme.primary
-                      : isActive
-                          ? activeStepBackgroundColor ?? Colors.transparent
-                          : unreachedBackgroundColor ?? Colors.transparent,
+                  color: step.backgroundColor != null
+                      ? step.backgroundColor
+                      : isFinished
+                          ? finishedBackgroundColor ??
+                              Theme.of(context).colorScheme.primary
+                          : isActive
+                              ? activeStepBackgroundColor ?? Colors.transparent
+                              : unreachedBackgroundColor ?? Colors.transparent,
                 ),
                 alignment: Alignment.center,
                 child: showStepBorder

@@ -30,6 +30,8 @@ class EasyStep {
   /// Create your own widget appear under the step line, Hence: last step does not have a line, if this property is set `lineText` will be ignored..
   final Widget? customLineWidget;
 
+  final Color? backgroundColor;
+
   /// Create a new Step with custom icon and optional title
   const EasyStep({
     this.icon,
@@ -40,5 +42,6 @@ class EasyStep {
     this.customStep,
     this.customTitle,
     this.customLineWidget,
+    this.backgroundColor,
   }) : assert(icon != null || customStep != null);
 }
